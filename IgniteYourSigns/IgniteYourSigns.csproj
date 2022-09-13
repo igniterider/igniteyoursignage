@@ -53,6 +53,8 @@
 	  <None Remove="Controls\" />
 	  <None Remove="CommunityToolkit.Mvvm" />
 	  <None Remove="CommunityToolkit.Maui.Core" />
+	  <None Remove="Services\" />
+	  <None Remove="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
@@ -64,6 +66,8 @@
 	  <Folder Include="Views\" />
 	  <Folder Include="Viewmodels\" />
 	  <Folder Include="Controls\" />
+	  <Folder Include="Services\" />
+	  <Folder Include="Models\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Update="Views\Dashboard.xaml">

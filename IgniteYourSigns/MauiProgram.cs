@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Core;
+using IgniteYourSigns.Services;
 
 namespace IgniteYourSigns;
 
@@ -19,9 +20,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+        builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+		builder.Services.AddSingleton<SignService>();
+		builder.Services.AddSingleton<DashboardViewmodel>();
+		builder.Services.AddSingleton<Dashboard>();
 
-
-		return builder.Build();
+        return builder.Build();
 	}
 }
 

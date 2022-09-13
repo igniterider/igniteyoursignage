@@ -51,14 +51,23 @@
 	  <None Remove="Views\" />
 	  <None Remove="Viewmodels\" />
 	  <None Remove="Controls\" />
+	  <None Remove="CommunityToolkit.Mvvm" />
+	  <None Remove="CommunityToolkit.Maui.Core" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
 	  <PackageReference Include="System.Text.Json" Version="6.0.6" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.2.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
 	  <Folder Include="Viewmodels\" />
 	  <Folder Include="Controls\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Views\Dashboard.xaml">
+	    <SubType></SubType>
+	  </MauiXaml>
 	</ItemGroup>
 </Project>

@@ -35,7 +35,7 @@
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splasha.svg" Color="#512BD4" BaseSize="200,200" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -48,9 +48,17 @@
 	<ItemGroup>
 	  <None Remove="CommunityToolkit.Maui" />
 	  <None Remove="System.Text.Json" />
+	  <None Remove="Views\" />
+	  <None Remove="Viewmodels\" />
+	  <None Remove="Controls\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
 	  <PackageReference Include="System.Text.Json" Version="6.0.6" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
+	  <Folder Include="Viewmodels\" />
+	  <Folder Include="Controls\" />
 	</ItemGroup>
 </Project>

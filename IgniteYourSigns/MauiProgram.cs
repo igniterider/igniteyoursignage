@@ -1,5 +1,5 @@
-﻿using CommunityToolkit.Maui;
-using CommunityToolkit.Maui.Core;
+﻿using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui;
 using IgniteYourSigns.Services;
 
 namespace IgniteYourSigns;
@@ -9,8 +9,8 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>().UseMauiCommunityToolkit();
         builder.UseMauiApp<App>().UseMauiCommunityToolkitCore();
+        builder.UseMauiApp<App>().UseMauiCommunityToolkit();
 
         builder
 			.UseMauiApp<App>()

@@ -2,27 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:IgniteYourSigns.Viewmodels"
+             xmlns:model="clr-namespace:IgniteYourSigns.Models"
              x:Class="IgniteYourSigns.Views.Dashboard"
              Title="Dashboard"
              x:DataType="viewmodel:DashboardViewmodel">
 
 
-    <Grid
-        ColumnDefinitions="*,*"
-        ColumnSpacing="5"
-        RowDefinitions="*,Auto"
-        RowSpacing="0">
-        <RefreshView
-            Grid.ColumnSpan="2"
-            Command="{Binding GetMonkeysCommand}"
-            IsRefreshing="{Binding IsRefreshing}">
+    <Grid BackgroundColor="White">
+
+        <StackLayout>
+            <Label Text="DASHBOARD" TextColor="DarkRed" FontSize="Title"/>
+            <BoxView BackgroundColor="Black" HeightRequest="100" WidthRequest="100"/>
+            <HorizontalStackLayout Margin="10">
+
+                <Button Text="icon"/>
+                <Button Text="icon2"/>
+                <Button Text="icon3"/>
+                <Button Text="icon4"/>
 
 
+            </HorizontalStackLayout>
+
+        
+         <Button Text="Get Signs" TextColor="Red" Command="{Binding GetSignsCommand}"/>
 
 
+        <ScrollView BackgroundColor="Aqua">
+
+        <CollectionView
+                ItemsSource="{Binding Signs}"
+                >
+            <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:PremadeSigns">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Displaytext}" TextColor="CadetBlue"/>
+                            <Label Text="{Binding Displaytext2}" TextColor="DarkBlue"/>
+                        </VerticalStackLayout>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
 
 
-</RefreshView>
+            </CollectionView>
+
+</ScrollView>
+        
+</StackLayout>
 </Grid>
 
 </ContentPage>

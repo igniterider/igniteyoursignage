@@ -1,7 +1,7 @@
 ﻿using System;
 using IgniteYourSigns.Models;
 using IgniteYourSigns.Services;
-using Microsoft.Maui.Networking;
+using CommunityToolkit.Mvvm.Input;
 
 
 namespace IgniteYourSigns.Viewmodels
@@ -11,17 +11,20 @@ namespace IgniteYourSigns.Viewmodels
 		public ObservableCollection<PremadeSigns> Signs { get; } = new();
 		SignService signService;
         IConnectivity connectivity;
+		public Command GetSignsCommand { get; }
 
 
         public DashboardViewmodel(SignService signService, IConnectivity connectivity)
 		{
 			this.signService = signService;
 			this.connectivity = connectivity;
+            GetSignsCommand = new Command(async () => await GetSignsAsync());
+        }
 
-		}
 
 		[ObservableProperty]
 		bool isRefresing;
+
 
 		async Task GetSignsAsync()
 		{
@@ -53,7 +56,7 @@ namespace IgniteYourSigns.Viewmodels
             finally
             {
                 IsBusy = false;
-                IsRefreshing = false;
+                
             }
 
         }
